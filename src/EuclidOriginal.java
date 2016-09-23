@@ -14,6 +14,7 @@ public class EuclidOriginal extends EuclidResult{
     public long runAlgorithm(){
         long quotient;
         long remainder;
+        long a, b;
 
         //Preprocessing
         if(numberOne < 1 || numberTwo < 1)          //Ensure both a and b are greater than 0
@@ -24,16 +25,18 @@ public class EuclidOriginal extends EuclidResult{
             numberTwo = z;
         }
         remainder = -1;                             //Ensure we start with a non-zero remainder
+        a = numberOne; b = numberTwo;
+
 
         //Calculate
         while(remainder != 0){
-            quotient = numberOne / numberTwo;
-            remainder = numberOne - quotient * numberTwo;  //possibility for overflow error here...
-            numberOne = numberTwo;
-            numberTwo = remainder;
+            quotient = a / b;
+            remainder = a - quotient * b;  //possibility for overflow error here...
+            a = b;
+            b = remainder;
         }
 
         //Return gcd
-        return numberOne;
+        return a;
     }
 }

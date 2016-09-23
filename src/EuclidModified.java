@@ -11,6 +11,7 @@ public class EuclidModified extends EuclidResult{
     @Override
     public long runAlgorithm() {
         long remainder;
+        long a, b;
 
         //Preprocessing
         if(numberOne < 1 || numberTwo < 1)          //Ensure both a and b are greater than 0
@@ -21,25 +22,26 @@ public class EuclidModified extends EuclidResult{
             numberTwo = z;
         }
         remainder = -1;                             //Ensure we start with a non-zero remainder
+        a = numberOne; b = numberTwo;
 
         //Calculate
         while(remainder != 0){
-            remainder = numberOne - numberTwo;
-            if(remainder >= numberTwo){
-                remainder = remainder - numberTwo;
-                if(remainder >= numberTwo){
-                    remainder = remainder - numberTwo;
-                    if(remainder > numberTwo){
-                        remainder = numberOne - numberTwo * (numberOne / numberTwo);
+            remainder = a - b;
+            if(remainder >= b){
+                remainder = remainder - b;
+                if(remainder >= b){
+                    remainder = remainder - b;
+                    if(remainder > b){
+                        remainder = a - b * (a / b);
                     }
                 }
             }
-            numberOne = numberTwo;
-            numberTwo = remainder;
+            a = b;
+            b = remainder;
         }
 
         //Return gcd
-        return numberOne;
+        return a;
     }
 
 }

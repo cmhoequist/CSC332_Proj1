@@ -1,2 +1,5 @@
 Statistics,Milliseconds
-Minimum Time,7.9E-4Maximum Time,0.007111Average Time,0.0015012Median Time,0.001186
+Minimum Time,7.9E-4
+Maximum Time,0.005926
+Average Time,0.00142616
+Median Time,0.001185

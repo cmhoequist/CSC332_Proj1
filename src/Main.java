@@ -33,10 +33,10 @@ public class Main {
         Arrays.sort(modifiedRuns, (EuclidModified a, EuclidModified b) -> a.runtimeNS.compareTo(b.runtimeNS));
 
         //For debugging
-        printResults(originalRuns);
-        printTable(originalRuns);
-        printResults(modifiedRuns);
-        printTable(modifiedRuns);
+//        printResults(originalRuns);
+//        printTable(originalRuns);
+//        printResults(modifiedRuns);
+//        printTable(modifiedRuns);
 
         //Writing
         writeResults("Original_Euclid_Results.csv", originalRuns);
@@ -80,10 +80,10 @@ public class Main {
 
         try(FileWriter writer = new FileWriter(new File(filename))){
             writer.write(tableHeader + "\n");
-            writer.write("Minimum Time,"+min/1000000.0);
-            writer.write("Maximum Time,"+max/1000000.0);
-            writer.write("Average Time,"+average/1000000.0);
-            writer.write("Median Time,"+median/1000000.0);
+            writer.write("Minimum Time,"+min/1000000.0+"\n");
+            writer.write("Maximum Time,"+max/1000000.0+"\n");
+            writer.write("Average Time,"+average/1000000.0+"\n");
+            writer.write("Median Time,"+median/1000000.0+"\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
